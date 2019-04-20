@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <p>{{category.name}}</p>
+
+        <h4>{{ local_category.name }}</h4>
+        {% for cat in category_types %}
+            <a href="{% url 'product:local-types-detail' slug=category.slug local_slug=local_category.slug local_type=cat.slug %}"><p>{{ cat.name }}</p></a>
+        {% endfor %}
+    </body>
+</html>

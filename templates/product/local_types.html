@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <h3>{{ locals_type.name }}</h3>
+        {% for product in products %}
+            <a href="{% url 'product:product-detail' slug=category.slug local_slug=local_category.slug local_type=locals_type.slug product_slug=product.slug %}"><h5>{{ product.name }}</h5></a>
+            <small>{{ product.price }} EGP</small><br>
+            <img src="{{ product.image.url }}" alt="{{ product.name }}">
+        {% endfor %}
+    </body>
+</html>

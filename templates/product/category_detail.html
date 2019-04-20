@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <h3>{{ category.name }}</h3>
+        {% for loc in local %}
+            <a href="{% url 'product:local-category-detail' slug=category.slug local_slug=loc.slug %}"><p>{{ loc.name }}</p></a> 
+        {% endfor %}
+    </body>
+</html>
